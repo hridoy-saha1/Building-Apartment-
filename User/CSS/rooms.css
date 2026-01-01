@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Wrapper */
+.room-wrapper {
+  background-color: #0e3a36;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.room-wrapper h1 {
+  color: #ffffff;
+  font-size: 48px;
+}
+
+/* Tabs */
+.tabs {
+  margin: 40px auto 30px;
+  background-color: #116760;
+  display: inline-flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 40px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  background: transparent;
+  color: #d1d5db;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tab:hover {
+  color: #ffffff;
+}
+
+.tab.active {
+  background-color: #b88648;
+  color: #ffffff;
+}
+
+/* Content */
+.content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: stretch; /* 🔴 equal height */
+}
+
+/* Text Box */
+.text-box {
+  background-color: #116760;
+  color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 350px;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title */
+.text-box h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* Description */
+.text-box p {
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+/* Image Box */
+.image-box {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 400px; /* 🔴 main height */
+}
+
+/* Image */
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Size badge */
+.image-box span {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background-color: #b88648;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* Mobile adjustment */
+@media (max-width: 767px) {
+  .image-box {
+    height: 300px;
+  }
+}
