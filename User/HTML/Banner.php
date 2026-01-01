@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>OneBuilding</title>
     <link rel="stylesheet" href="../css/banner.css">
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+>>>>>>> e464f779205a97c57721d24569a4259aa041698e
 </head>
 <body>
 
