@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Home Page</h1>
+    <?php     
+   include "Banner.php";
+   include "feature.php";
+    include "rooms.php";
+   include "footer.php";
+  
+    ?>
 </body>
 </html>
