@@ -74,13 +74,13 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 12px 20px; /* more horizontal padding for UX */
+  padding: 12px 20px; 
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  box-sizing: border-box; /* ensures padding works correctly */
+  box-sizing: border-box; 
 }
 
 /* Overlay Title */
@@ -88,7 +88,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   margin: 0;
-  max-width: 70%; /* ensures title doesn't push distance out */
+  max-width: 70%; 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -97,7 +97,7 @@ body {
 /* Overlay Distance */
 .place-card .overlay span {
   font-size: 14px;
-  margin-left: 8px; /* spacing between title and distance */
-  flex-shrink: 0;   /* ensures distance stays visible */
+  margin-left: 8px; 
+  flex-shrink: 0;   
 }
 

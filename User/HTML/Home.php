@@ -12,6 +12,7 @@
    include "feature.php";
    include "rooms.php";
    include "nearby.php";
+   include "about.php";
    include "footer.php";
   
     ?>
