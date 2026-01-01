@@ -7,16 +7,13 @@
 </head>
 <body>
     <h1>Home Page</h1>
-<<<<<<< HEAD
     <?php     
    include "Banner.php";
    include "feature.php";
-    include "rooms.php";
+   include "rooms.php";
+   include "nearby.php";
    include "footer.php";
   
     ?>
-=======
-    
->>>>>>> e464f779205a97c57721d24569a4259aa041698e
 </body>
 </html>
