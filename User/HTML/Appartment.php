@@ -1,8 +1,21 @@
 <?php
 include '../DB/db.php';
 
-$query = "SELECT * FROM apartments";
-$result = mysqli_query($conn, $query);
+$min = isset($_GET['min']) ? (int)$_GET['min'] : '';
+$max = isset($_GET['max']) ? (int)$_GET['max'] : '';
+
+
+$sql = "SELECT * FROM apartments WHERE 1";
+
+if ($min !== '') {
+    $sql .= " AND rent >= $min";
+}
+
+if ($max !== '') {
+    $sql .= " AND rent <= $max";
+}
+
+$result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -16,33 +29,44 @@ $result = mysqli_query($conn, $query);
 <?php include 'Navbar.php'; ?>
 
 <div class="container">
-  <h2>Available Appartments</h2>
 
+  <!-- 🔍 Search Form -->
+  <form method="GET" class="search-box">
+    <input type="number" name="min" placeholder="Min Rent"
+           value="<?php echo $_GET['min'] ?? ''; ?>">
+    <input type="number" name="max" placeholder="Max Rent"
+           value="<?php echo $_GET['max'] ?? ''; ?>">
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- 🏠 Apartment Cards -->
   <div class="grid">
 
-    <?php while ($apt = mysqli_fetch_assoc($result)) { ?>
+    <?php if (mysqli_num_rows($result) > 0) { ?>
 
-      <div class="card">
-        <div class="image-box">
+      <?php while ($apt = mysqli_fetch_assoc($result)) { ?>
+        <div class="card">
+          <div class="image-box">
             <img src="<?php echo $apt['image']; ?>" alt="Apartment">
+            <span class="rent">৳<?php echo $apt['rent']; ?></span>
+          </div>
 
-          <span class="rent">Rent: ৳<?php echo $apt['rent']; ?></span>
+          <div class="card-body">
+            <h3>Apt #<?php echo $apt['apartment_no']; ?></h3>
+            <p>Floor: <?php echo $apt['floor']; ?></p>
+            <p>Block: <?php echo $apt['block']; ?></p>
+
+            <form method="POST" action="agreement.php">
+              <input type="hidden" name="apartment_id"
+                     value="<?php echo $apt['id']; ?>">
+              <button class="apply-btn">Apply</button>
+            </form>
+          </div>
         </div>
+      <?php } ?>
 
-        <div class="card-body">
-          <h3>Apt #<?php echo $apt['apartment_no']; ?></h3>
-          <p>Floor: <?php echo $apt['floor']; ?></p>
-          <p>Block: <?php echo $apt['block']; ?></p>
-
-          <form method="POST" action="agreement.php">
-            <input type="hidden" name="apartment_id" value="<?php echo $apt['id']; ?>">
-            <button class="apply-btn">
-              Apply for Agreement
-            </button>
-          </form>
-        </div>
-      </div>
-
+    <?php } else { ?>
+      <p>No apartments found.</p>
     <?php } ?>
 
   </div>
