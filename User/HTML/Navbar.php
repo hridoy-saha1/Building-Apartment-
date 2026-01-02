@@ -15,7 +15,7 @@ session_start();
 
         <div class="logo">
             <img src="../Image/logo.jpg" alt="Logo">
-            <span>OneBuilding</span>
+            <span style="color: #e0d9d9;" >OneBuilding</span>
         </div>
 
         <div class="nav-links">
