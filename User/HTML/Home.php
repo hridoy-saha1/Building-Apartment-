@@ -13,6 +13,7 @@
    include "rooms.php";
    include "nearby.php";
    include "about.php";
+   include "location.php";
    include "footer.php";
   
     ?>
