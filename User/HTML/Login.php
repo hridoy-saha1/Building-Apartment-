@@ -32,7 +32,8 @@ session_start();
                 $_SESSION['name']    = $user['name'];
                 $_SESSION['email']   = $user['email'];
                 $_SESSION['photo']   = $user['photo'];
-                $_SESSION['role']    = $user['role'];  
+                $_SESSION['role']    = $user['role'];
+                $_SESSION['user_id'] = $user['id'];  
           header("Location: Home.php");
                 exit;
      }

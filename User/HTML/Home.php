@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php     
+    <?php   
+    include "Navbar.php";  
    include "Banner.php";
    include "feature.php";
     include "rooms.php";
