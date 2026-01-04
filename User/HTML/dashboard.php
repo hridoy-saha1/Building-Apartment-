@@ -16,13 +16,13 @@ if (!isset($_SESSION['email'])) {
 
 <div class="dashboard">
 
-    <!-- Sidebar -->
+   
     <aside class="sidebar">
         <h2 class="logo">🏢 Dashboard</h2>
 
         <a href="profile.php" class="active">👤 My Profile</a>
 
-        <!-- Disabled / Coming Soon -->
+        
         <span class="disabled">📢 Announcements (Coming Soon)</span>
         <span class="disabled">💳 Make Payment (Coming Soon)</span>
         <span class="disabled">📄 Payment History (Coming Soon)</span>
@@ -33,7 +33,7 @@ if (!isset($_SESSION['email'])) {
         </div>
     </aside>
 
-    <!-- Main -->
+   
     <main class="content">
         <h1>Welcome to your Dashboard</h1>
         <p>Select <strong>My Profile</strong> to view your information.</p>

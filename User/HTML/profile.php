@@ -26,7 +26,7 @@ $avatarLetter = strtoupper(substr($user['name'], 0, 1));
 
 <div class="dashboard">
 
-    <!-- Sidebar -->
+    
     <aside class="sidebar">
         <h2 class="logo">🏢 Dashboard</h2>
         <a href="profile.php" class="active">👤 My Profile</a>
@@ -41,7 +41,6 @@ $avatarLetter = strtoupper(substr($user['name'], 0, 1));
         </div>
     </aside>
 
-    <!-- Main -->
     <main class="content">
         <div class="profile-card">
             <h2>👤 My Profile</h2>

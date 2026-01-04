@@ -10,7 +10,7 @@
 <section class="feature-section">
     <div class="container">
 
-        <!-- Left Side -->
+        
         <div class="left">
             <span class="badge">Home Overview</span>
 
@@ -24,7 +24,7 @@
             </p>
         </div>
 
-        <!-- Right Side -->
+       
         <div class="right">
             <div class="feature-box">
                 <div class="icon">🏠</div>

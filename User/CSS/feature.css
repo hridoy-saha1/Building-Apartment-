@@ -3,13 +3,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Section */
+
 .feature-section {
     padding: 60px 20px;
     background-color: #ffffff;
 }
 
-/* Container */
+
 .container {
     max-width: 1200px;
     margin: auto;
@@ -18,7 +18,7 @@ body {
     gap: 50px;
 }
 
-/* Left Side */
+
 .left .badge {
     font-size: 14px;
     color: #4b5563;
@@ -43,7 +43,7 @@ body {
     max-width: 500px;
 }
 
-/* Right Side */
+
 .right {
     display: grid;
     grid-template-columns: 1fr;
@@ -72,14 +72,4 @@ body {
     color: #6b7280;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-    .container {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-    }
 
-    .right {
-        grid-template-columns: 1fr 1fr;
-    }
-}

@@ -5,13 +5,13 @@
   <title>Apartment Location</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Leaflet CSS -->
+ 
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
 
-  <!-- Custom CSS -->
+ 
   <link rel="stylesheet" href="../css/location.css" />
 </head>
 <body>
@@ -20,7 +20,7 @@
     <h2 class="section-title">Apartment Location & How to Get There</h2>
 
     <div class="content-wrapper">
-      <!-- Text -->
+    
       <div class="text-area">
         <p>
           Our apartment is conveniently located in the heart of Dhaka,
@@ -37,17 +37,17 @@
         </ul>
       </div>
 
-      <!-- Map -->
+     
       <div class="map-area">
         <div id="map"></div>
       </div>
     </div>
   </section>
 
-  <!-- Leaflet JS -->
+  
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Custom JS -->
+  
   <script src="../js/location.js"></script>
 </body>
 </html>
