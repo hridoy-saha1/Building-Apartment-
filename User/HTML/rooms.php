@@ -10,7 +10,7 @@
 <div class="room-wrapper">
   <h1>Discover Room</h1>
 
-  <!-- Tabs -->
+  
   <div class="tabs">
     <button class="tab active" onclick="showRoom(0)">Living Room</button>
     <button class="tab" onclick="showRoom(1)">Dining Room</button>
@@ -19,9 +19,9 @@
     <button class="tab" onclick="showRoom(4)">Bathroom</button>
   </div>
 
-  <!-- Content -->
+  
   <div class="content">
-    <!-- Left -->
+   
     <div class="text-box">
       <h2 id="room-name">Living Room</h2>
       <p id="room-desc">
@@ -29,7 +29,7 @@
       </p>
     </div>
 
-    <!-- Right -->
+    
     <div class="image-box">
       <img id="room-img" src="../Image/living.jpg" alt="Living Room">
       <span id="room-size">20 m²</span>

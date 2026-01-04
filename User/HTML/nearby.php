@@ -15,7 +15,7 @@
   <h2 class="section-title">Highlights Nearby</h2>
 
   <div class="grid-container">
-    <!-- Airport -->
+    
     <div class="place-card">
       <img src="../Image/airport.jpg" alt="Airport">
       <div class="overlay">
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <!-- University -->
+   
     <div class="place-card">
       <img src="../Image/university.jpg" alt="University">
       <div class="overlay">
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <!-- Shopping Mall -->
+    
     <div class="place-card">
       <img src="../Image/mall.jpg" alt="Shopping Mall">
       <div class="overlay">

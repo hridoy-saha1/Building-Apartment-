@@ -9,7 +9,7 @@ body {
   background: #f5f7fb;
 }
 
-/* Section */
+
 .location-section {
   max-width: 1200px;
   margin: auto;
@@ -19,7 +19,7 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* Title */
+
 .section-title {
   text-align: center;
   color: #1d4ed8;
@@ -28,14 +28,14 @@ body {
   margin-bottom: 40px;
 }
 
-/* Layout */
+
 .content-wrapper {
   display: flex;
   gap: 30px;
   align-items: center;
 }
 
-/* Text */
+
 .text-area {
   flex: 1;
   color: #374151;
@@ -57,7 +57,7 @@ body {
   font-weight: bold;
 }
 
-/* Map */
+
 .map-area {
   flex: 1;
 }
@@ -69,13 +69,4 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-  }
 
-  #map {
-    height: 300px;
-  }
-}

@@ -9,14 +9,14 @@ body {
   background: #f5f7fa;
 }
 
-/* Container */
+
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* Warning */
+
 .warning {
   color: red;
   font-size: 18px;
@@ -24,7 +24,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Search Box */
+
 .search-box {
   display: flex;
   gap: 10px;
@@ -51,14 +51,14 @@ body {
   background: #1e40af;
 }
 
-/* Grid */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
 
-/* Card */
+
 .card {
   background: #fff;
   border-radius: 12px;
@@ -71,7 +71,7 @@ body {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Image */
+
 .image-box {
   position: relative;
 }
@@ -93,7 +93,7 @@ body {
   font-size: 14px;
 }
 
-/* Card Body */
+
 .card-body {
   padding: 20px;
 }
@@ -107,7 +107,7 @@ body {
   margin-bottom: 6px;
 }
 
-/* Button */
+
 .apply-btn {
   margin-top: 15px;
   width: 100%;
@@ -126,14 +126,14 @@ body {
   color: #fff;
 }
 
-/* Disabled */
+
 .apply-btn.disabled {
   border-color: #aaa;
   color: #aaa;
   cursor: not-allowed;
 }
 
-/* Pagination */
+
 .pagination {
   margin-top: 40px;
   display: flex;
