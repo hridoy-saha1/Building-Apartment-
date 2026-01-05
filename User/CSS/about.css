@@ -26,6 +26,7 @@ body {
   letter-spacing: 1px;
 }
 
+
 .about-building .divider {
   width: 96px;
   height: 4px;
@@ -34,14 +35,16 @@ body {
   border-radius: 2px;
 }
 
+
 .about-building .about-text {
   font-size: 18px;
   line-height: 1.75;
-  color: #374151; 
+  color: #374151;
   max-width: 650px;
   margin: 0 auto;
   margin-bottom: 16px;
 }
+
 
 .about-building .about-subtext {
   font-size: 16px;

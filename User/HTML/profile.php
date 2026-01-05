@@ -1,13 +1,18 @@
 <?php
 session_start();
-require_once '../DB/db.php';
-include 'dashboard_layout.php';
+include '../DB/db.php';
+
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit();
+}
 
 $email = $_SESSION['email'];
-$stmt = $conn->prepare("SELECT name,email,role FROM users WHERE email=?");
-$stmt->bind_param("s",$email);
-$stmt->execute();
-$user = $stmt->get_result()->fetch_assoc();
+$sql = "SELECT name, email, role FROM users WHERE email='$email'";
+$result = $conn->query($sql);
+$user = $result->fetch_assoc();
+
+$avatarLetter = strtoupper(substr($user['name'], 0, 1));
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +46,5 @@ $user = $stmt->get_result()->fetch_assoc();
 
 </div>
 
-</main>
-<script src="../JS/dashboard.js"></script>
 </body>
 </html>

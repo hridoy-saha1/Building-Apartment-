@@ -30,6 +30,7 @@ $result = mysqli_query($conn, $sql);
 
 <div class="container">
 
+
   <form method="GET" class="search-box">
     <input type="number" name="min" placeholder="Min Rent"
            value="<?php echo $_GET['min'] ?? ''; ?>">
