@@ -17,7 +17,7 @@ body {
   padding: 20px;
 }
 
-/* Card */
+
 .register-box {
   width: 100%;
   max-width: 420px;
@@ -33,7 +33,7 @@ body {
   margin-bottom: 24px;
 }
 
-/* Form */
+
 .form-group {
   margin-bottom: 16px;
 }
@@ -65,7 +65,7 @@ body {
   color: #6b7280;
 }
 
-/* Button */
+
 .btn-primary {
   width: 100%;
   padding: 10px;
@@ -82,7 +82,7 @@ body {
   background: #1e40af;
 }
 
-/* Footer */
+
 .footer-text {
   margin-top: 18px;
   text-align: center;

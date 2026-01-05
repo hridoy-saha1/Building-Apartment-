@@ -17,7 +17,7 @@ body {
   padding: 20px;
 }
 
-/* Card */
+
 .login-box {
   width: 100%;
   max-width: 400px;
@@ -33,7 +33,7 @@ body {
   margin-bottom: 24px;
 }
 
-/* Form */
+
 .form-group {
   margin-bottom: 16px;
 }
@@ -58,7 +58,7 @@ body {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-/* Buttons */
+
 .btn-primary {
   width: 100%;
   padding: 10px;
@@ -75,7 +75,7 @@ body {
   background: #1e40af;
 }
 
-/* Divider */
+
 .divider {
   text-align: center;
   margin: 20px 0;
@@ -107,7 +107,7 @@ body {
   color: #6b7280;
 }
 
-/* Google Button */
+
 .btn-google {
   width: 100%;
   padding: 10px;
@@ -131,7 +131,7 @@ body {
   background: #f3f4f6;
 }
 
-/* Footer */
+
 .footer-text {
   margin-top: 16px;
   text-align: center;
