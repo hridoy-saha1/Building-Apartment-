@@ -41,7 +41,7 @@ session_start();
         $error = "Invalid Password";
      }
 
-    }
+    } 
     else{
         $error="Invalid Email"; 
 

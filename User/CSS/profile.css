@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+  padding: 40px;
+}
+
+.profile-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 32px;
+  color: #1e40af;
+  margin-bottom: 25px;
+}
+
+/* Header */
+.profile-header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2563eb;
+}
+
+.profile-info p {
+  font-size: 18px;
+  margin: 6px 0;
+}
+
+.icon-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Member Box */
+.member-box {
+  margin-top: 35px;
+  padding: 20px;
+  background: #ecfdf5;
+  border-left: 5px solid #22c55e;
+  border-radius: 8px;
+}
+
+.member-box h3 {
+  color: #16a34a;
+  margin-bottom: 10px;
+}
+
+/* Admin Box */
+.admin-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fefce8;
+  border-left: 5px solid #facc15;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}

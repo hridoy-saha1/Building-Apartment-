@@ -21,35 +21,32 @@ body {
 .about-building h2 {
   font-size: 36px;
   font-weight: 800;
-  color: #1d4ed8; /* Blue-700 */
+  color: #1d4ed8; 
   margin-bottom: 16px;
   letter-spacing: 1px;
 }
 
-/* Divider under heading */
 .about-building .divider {
   width: 96px;
   height: 4px;
-  background-color: #3b82f6; /* Blue-500 */
+  background-color: #3b82f6; 
   margin: 0 auto 32px auto;
   border-radius: 2px;
 }
 
-/* Main paragraph */
 .about-building .about-text {
   font-size: 18px;
   line-height: 1.75;
-  color: #374151; /* gray-700 */
+  color: #374151; 
   max-width: 650px;
   margin: 0 auto;
   margin-bottom: 16px;
 }
 
-/* Secondary paragraph */
 .about-building .about-subtext {
   font-size: 16px;
   line-height: 1.75;
-  color: #6b7280; /* gray-600 */
+  color: #6b7280; 
   max-width: 650px;
   margin: 24px auto 0 auto;
 }
