@@ -12,6 +12,8 @@ $role = $_SESSION['role'] ?? '';
         
         <a href="profile.php">👤 Profile</a>
         <a href="announcement.php">📢 Announcements</a>
+        <a href="agreementRequest.php">📢 Agreement Request</a>
+
          <a href="manage-cupon.php">🎟 Manage Coupon</a>
 
     <?php elseif ($role === 'user'): ?>
