@@ -14,30 +14,16 @@ if (!isset($_SESSION['email'])) {
 </head>
 <body>
 
-<div class="dashboard">
+<div class="layout">
 
-   
-    <aside class="sidebar">
-        <h2 class="logo">🏢 Dashboard</h2>
+<?php include 'sidebar.php'; ?>
 
-        <a href="profile.php" class="active">👤 My Profile</a>
-
-        
-        <span class="disabled">📢 Announcements (Coming Soon)</span>
-        <span class="disabled">💳 Make Payment (Coming Soon)</span>
-        <span class="disabled">📄 Payment History (Coming Soon)</span>
-
-        <div class="bottom">
-            <a href="Home.php">⬅ Back to Home</a>
-            <a href="logout.php" class="logout">Logout</a>
-        </div>
-    </aside>
-
-   
-    <main class="content">
-        <h1>Welcome to your Dashboard</h1>
-        <p>Select <strong>My Profile</strong> to view your information.</p>
-    </main>
+<main class="content">
+    <div class="card">
+        <h1>Welcome to Dashboard</h1>
+        <p>Select an option from the left menu.</p>
+    </div>
+</main>
 
 </div>
 

@@ -30,7 +30,7 @@ $result = mysqli_query($conn, $sql);
 
 <div class="container">
 
-  <!-- 🔍 Search Form -->
+
   <form method="GET" class="search-box">
     <input type="number" name="min" placeholder="Min Rent"
            value="<?php echo $_GET['min'] ?? ''; ?>">
@@ -39,7 +39,7 @@ $result = mysqli_query($conn, $sql);
     <button type="submit">Search</button>
   </form>
 
-  <!-- 🏠 Apartment Cards -->
+  
   <div class="grid">
 
     <?php if (mysqli_num_rows($result) > 0) { ?>

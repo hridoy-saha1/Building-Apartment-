@@ -1,102 +1,66 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family: Arial, sans-serif;
 }
 
-body {
-    background: #f4f6f8;
+body{
+    background:#f3f4f6;
 }
 
-
-.dashboard {
-    display: flex;
-    min-height: 100vh;
+.layout{
+    display:flex;
+    min-height:100vh;
 }
 
-
-.sidebar {
-    width: 250px;
-    background: #1e40af;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+/* ===== Sidebar ===== */
+.sidebar{
+    width:250px;
+    background:#1e40af;
+    color:white;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
 }
 
-.logo {
-    text-align: center;
-    margin-bottom: 30px;
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:25px;
 }
 
-.sidebar a,
-.sidebar span {
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-    margin-bottom: 6px;
-    border-radius: 6px;
-    display: block;
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:6px;
+    margin-bottom:10px;
+    display:block;
 }
 
-.sidebar a:hover,
-.sidebar a.active {
-    background: #2563eb;
+.sidebar a:hover{
+    background:#2563eb;
 }
 
-
-.disabled {
-    background: rgba(255,255,255,0.15);
-    cursor: not-allowed;
-    font-size: 14px;
+.bottom{
+    margin-top:auto;
 }
 
-
-.bottom {
-    margin-top: auto;
+.logout{
+    background:#dc2626;
+    text-align:center;
 }
 
-.logout {
-    background: #dc2626;
-    text-align: center;
+/* ===== Content ===== */
+.content{
+    flex:1;
+    padding:40px;
 }
 
-
-.content {
-    flex: 1;
-    padding: 40px;
-}
-
-
-.profile-card {
-    max-width: 500px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.profile-card h2 {
-    color: #1e40af;
-    margin-bottom: 20px;
-}
-
-
-.avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: #65a30d;
-    color: white;
-    font-size: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.profile-card p {
-    font-size: 17px;
-    margin-bottom: 10px;
+.card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
