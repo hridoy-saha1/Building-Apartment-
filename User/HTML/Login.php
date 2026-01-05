@@ -9,6 +9,11 @@
 
 <?php 
 session_start();
+if (isset($_SESSION["name"]))
+{
+    header("Location:dashboard.php");
+    exit();
+}
  include '../DB/db.php';
   $error = '';
 
@@ -34,7 +39,7 @@ session_start();
                 $_SESSION['photo']   = $user['photo'];
                 $_SESSION['role']    = $user['role'];
                 $_SESSION['user_id'] = $user['id'];  
-          header("Location: Home.php");
+          header("Location: dashboard.php");
                 exit;
      }
      else{

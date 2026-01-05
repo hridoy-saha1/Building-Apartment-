@@ -1,85 +1,93 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
+/* ===== Page Base ===== */
 body {
-    background: #f3f4f6;
-}
-
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
+    background: #f1f5f9;
+    font-family: "Segoe UI", Tahoma, sans-serif;
     padding: 20px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.container h2 {
-    font-size: 22px;
+/* ===== Title ===== */
+h2 {
     margin-bottom: 20px;
-    color: #1f2933;
+    color: #1e293b;
 }
 
-/* Table */
+/* ===== Table Wrapper ===== */
 .table-wrapper {
-    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
 }
 
-table {
+/* ===== Table ===== */
+.table {
     width: 100%;
     border-collapse: collapse;
 }
 
-thead {
-    background: #2563eb;
+/* ===== Head ===== */
+.table thead {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
     color: #ffffff;
 }
 
-th, td {
-    padding: 10px;
-    border: 1px solid #e5e7eb;
-    text-align: center;
+.table th {
+    padding: 14px;
     font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-tbody tr:nth-child(even) {
-    background: #f9fafb;
+/* ===== Body ===== */
+.table td {
+    padding: 14px;
+    text-align: center;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-/* Actions */
-.actions {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* ===== Row Hover ===== */
+.table tbody tr:hover {
+    background: #f8fafc;
+    transition: 0.2s ease;
 }
 
-.btn {
-    padding: 6px 14px;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 13px;
+/* ===== Buttons ===== */
+.accept, .reject {
     border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+/* Accept Button */
 .accept {
-    background: #16a34a;
+    background: #22c55e;
+    color: #ffffff;
 }
 
 .accept:hover {
-    background: #15803d;
+    background: #16a34a;
+    transform: scale(1.05);
 }
 
+/* Reject Button */
 .reject {
-    background: #dc2626;
+    background: #ef4444;
+    color: #ffffff;
+    margin-left: 6px;
 }
 
 .reject:hover {
-    background: #b91c1c;
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+/* ===== Empty State ===== */
+.table tbody tr td[colspan] {
+    padding: 30px;
+    font-style: italic;
+    color: #64748b;
 }
