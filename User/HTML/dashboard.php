@@ -18,10 +18,17 @@ $current = basename($_SERVER['PHP_SELF']);
 </head>
 <body>
 
-<!-- Mobile Header -->
-<div class="mobile-header">
-  <h2>🏢 Dashboard</h2>
-  <button id="menuBtn"><i class="fas fa-bars"></i></button>
+<div class="layout">
+
+<?php include 'sidebar.php'; ?>
+
+<main class="content">
+    <div class="card">
+        <h1>Welcome to Dashboard</h1>
+        <p>Select an option from the left menu.</p>
+    </div>
+</main>
+
 </div>
 
 <!-- Sidebar -->

@@ -1,98 +1,66 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-
-body{background:#f3f4f6}
-
-.mobile-header{
-  display:none;
-  background:#1e40af;
-  color:white;
-  padding:15px;
-  justify-content:space-between;
-  align-items:center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
 }
 
+body{
+    background:#f3f4f6;
+}
+
+.layout{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ===== Sidebar ===== */
 .sidebar{
-  width:260px;
-  background:#1e40af;
-  color:white;
-  position:fixed;
-  top:0;
-  left:0;
-  height:100vh;
-  padding:20px;
-  transition:.3s;
+    width:250px;
+    background:#1e40af;
+    color:white;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
 }
 
-.logo{text-align:center;margin-bottom:30px}
-
-.sidebar nav a{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px;
-  color:white;
-  text-decoration:none;
-  border-radius:5px;
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:25px;
 }
 
-.sidebar nav a:hover,
-.sidebar nav a.active{
-  background:#1d4ed8;
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:6px;
+    margin-bottom:10px;
+    display:block;
 }
 
-.sidebar-bottom{
-  position:absolute;
-  bottom:20px;
-  width:85%;
+.sidebar a:hover{
+    background:#2563eb;
+}
+
+.bottom{
+    margin-top:auto;
 }
 
 .logout{
-  display:block;
-  background:#ef4444;
-  padding:8px;
-  text-align:center;
-  border-radius:5px;
-  margin-top:10px;
+    background:#dc2626;
+    text-align:center;
 }
 
+/* ===== Content ===== */
 .content{
-  margin-left:260px;
-  padding:30px;
+    flex:1;
+    padding:40px;
 }
 
 .card{
-  background:white;
-  padding:25px;
-  border-radius:10px;
-  max-width:400px;
-  box-shadow:0 10px 20px rgba(0,0,0,.1);
-}
-
-.avatar{
-  width:90px;
-  height:90px;
-  background:#1e40af;
-  color:white;
-  border-radius:50%;
-  font-size:36px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:15px auto;
-}
-
-/* Mobile */
-.overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.3);
-}
-
-@media(max-width:768px){
-  .mobile-header{display:flex}
-  .sidebar{transform:translateX(-100%);z-index:50}
-  .sidebar.open{transform:translateX(0)}
-  .content{margin-left:0;padding-top:80px}
-  .overlay.show{display:block}
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
