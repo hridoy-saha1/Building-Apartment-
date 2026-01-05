@@ -20,26 +20,16 @@ $avatarLetter = strtoupper(substr($user['name'], 0, 1));
 <head>
     <meta charset="UTF-8">
     <title>My Profile</title>
+
+  
     <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../CSS/profile.css">
 </head>
 <body>
 
-<div class="dashboard">
+<div class="layout">
 
-    
-    <aside class="sidebar">
-        <h2 class="logo">🏢 Dashboard</h2>
-        <a href="profile.php" class="active">👤 My Profile</a>
-
-        <span class="disabled">📢 Announcements</span>
-        <span class="disabled">💳 Make Payment</span>
-        <span class="disabled">📄 Payment History</span>
-
-        <div class="bottom">
-            <a href="Home.php">⬅ Back to Home</a>
-            <a href="logout.php" class="logout">Logout</a>
-        </div>
-    </aside>
+    <?php include 'sidebar.php'; ?>
 
     <main class="content">
         <div class="profile-card">
