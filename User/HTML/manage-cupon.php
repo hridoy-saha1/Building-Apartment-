@@ -7,7 +7,6 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
-/* ===== Add Coupon ===== */
 if (isset($_POST['add_coupon'])) {
     $code = $_POST['code'];
     $discount = $_POST['discount'];
@@ -17,13 +16,11 @@ if (isset($_POST['add_coupon'])) {
                   VALUES ('$code', '$discount', '$description', 1)");
 }
 
-/* ===== Toggle Availability ===== */
 if (isset($_GET['toggle'])) {
     $id = $_GET['toggle'];
     $conn->query("UPDATE coupons SET available = IF(available=1,0,1) WHERE id=$id");
 }
 
-/* ===== Fetch Coupons ===== */
 $result = $conn->query("SELECT * FROM coupons ORDER BY id DESC");
 ?>
 
@@ -33,7 +30,6 @@ $result = $conn->query("SELECT * FROM coupons ORDER BY id DESC");
     <meta charset="UTF-8">
     <title>Manage Coupons</title>
 
-    <!-- Dashboard CSS -->
     <link rel="stylesheet" href="../CSS/dashboard.css">
     <link rel="stylesheet" href="../CSS/manage-cupon.css">
 </head>
@@ -41,10 +37,8 @@ $result = $conn->query("SELECT * FROM coupons ORDER BY id DESC");
 
 <div class="layout">
 
-    <!-- Sidebar -->
     <?php include 'sidebar.php'; ?>
 
-    <!-- Main Content -->
     <main class="content">
 
         <div class="page-header">
@@ -52,7 +46,6 @@ $result = $conn->query("SELECT * FROM coupons ORDER BY id DESC");
             <p>Create, activate or deactivate coupons</p>
         </div>
 
-        <!-- Add Coupon Card -->
         <div class="card add-card">
             <h3>Add New Coupon</h3>
 
@@ -78,7 +71,6 @@ $result = $conn->query("SELECT * FROM coupons ORDER BY id DESC");
             </form>
         </div>
 
-        <!-- Coupon List -->
         <div class="table-card card">
             <h3>Coupon List</h3>
 
