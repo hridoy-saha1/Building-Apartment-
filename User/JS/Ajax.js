@@ -38,7 +38,7 @@ function updateStatus(id, status) {
         }
     };
 
-    xhttp.open("POST", "agreementControl.php", true);
+    xhttp.open("POST", "../HTML/agreementControl.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("id=" + id + "&status=" + status);
 }
