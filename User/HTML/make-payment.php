@@ -1,190 +1,167 @@
 <?php
 session_start();
+include '../DB/db.php';
+
+if (!isset($_SESSION['email'])) {
+    header("Location: Login.php");
+    exit();
+}
+
+$userEmail = $_SESSION['email'];
+
+/* 🔍 Get approved agreement */
+$sql = "SELECT * FROM agreements 
+        WHERE user_email='$userEmail' 
+        AND status='approved' 
+        LIMIT 1";
+
+$res = mysqli_query($conn, $sql);
+
+$agreement = null;
+if (mysqli_num_rows($res) === 1) {
+    $agreement = mysqli_fetch_assoc($res);
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Make Payment</title>
     <link rel="stylesheet" href="../CSS/dashboard.css">
-
-    <style>
-        .payment-card {
-            max-width: 520px;
-            margin: 20px auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        }
-
-        .payment-card h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #1e293b;
-        }
-
-        .form-group {
-            margin-bottom: 14px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 6px;
-            color: #334155;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            font-size: 14px;
-        }
-
-        .form-group input[readonly] {
-            background: #f8fafc;
-        }
-
-        .coupon-row {
-            display: flex;
-            gap: 8px;
-        }
-
-        .coupon-row button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .pay-btn {
-            width: 100%;
-            margin-top: 15px;
-            background: #16a34a;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .pay-btn:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-        }
-
-        .info-text {
-            font-size: 13px;
-            margin-top: 6px;
-        }
-
-        .success {
-            color: #16a34a;
-        }
-
-        .error {
-            color: #dc2626;
-        }
-    </style>
+   <link rel="stylesheet" href="../CSS/makePayment.css">
 </head>
 
 <body>
 
 <div class="layout">
-
 <?php include 'sidebar.php'; ?>
 
 <main class="content">
 
+<?php if (!$agreement) { ?>
+
     <div class="payment-card">
-        <h1>💳 Make Payment</h1>
+        <div class="msg-box msg-error" style="display:block;">
+            ❌ No approved agreement found for your account.
+        </div>
+    </div>
+
+<?php } else { ?>
+
+    <div class="payment-card">
+        <h2>💳 Make Payment</h2>
+
+        <div id="msgBox" class="msg-box"></div>
 
         <form id="paymentForm">
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="text" value="<?php echo $_SESSION['email'] ?? ''; ?>" readonly>
+                <input type="text" value="<?= $userEmail ?>" readonly>
             </div>
 
             <div class="form-group">
-                <label>Floor</label>
-                <input type="text" id="floor" readonly>
+                <label>Apartment</label>
+                <input type="text" value="<?= $agreement['apartment_no'] ?>" readonly>
             </div>
 
             <div class="form-group">
                 <label>Block</label>
-                <input type="text" id="block" readonly>
+                <input type="text" value="<?= $agreement['block'] ?>" readonly>
             </div>
 
             <div class="form-group">
-                <label>Apartment No</label>
-                <input type="text" id="room" readonly>
+                <label>Floor</label>
+                <input type="text" value="<?= $agreement['floor'] ?>" readonly>
             </div>
 
             <div class="form-group">
                 <label>Rent (৳)</label>
-                <input type="text" id="rent" readonly>
+             <input type="text" id="rent" value="<?= $agreement['rent'] ?>" readonly>
             </div>
 
             <div class="form-group">
                 <label>Month</label>
-                <select id="month">
+                <select id="month" required>
                     <option value="">Select Month</option>
-                    <option>January</option>
-                    <option>February</option>
-                    <option>March</option>
-                    <option>April</option>
-                    <option>May</option>
-                    <option>June</option>
-                    <option>July</option>
-                    <option>August</option>
-                    <option>September</option>
-                    <option>October</option>
-                    <option>November</option>
-                    <option>December</option>
+                    <?php
+                    $months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+                    foreach($months as $m) echo "<option>$m</option>";
+                    ?>
                 </select>
             </div>
 
-            <div class="form-group">
-                <label>Coupon Code</label>
-                <div class="coupon-row">
-                    <input type="text" id="coupon" placeholder="Enter coupon code">
-                    <button type="button" onclick="applyCoupon()">Apply</button>
-                </div>
-                <p id="couponMsg" class="info-text"></p>
-            </div>
+       
 
-            <button type="submit" class="pay-btn" id="payBtn">Pay Now</button>
+<div class="coupon-box">
 
-            <p id="paymentMsg" class="info-text"></p>
+    <label class="coupon-label">🎟️ Coupon Code</label>
+
+    <div class="coupon-input-row">
+    <input type="text" id="couponCode" placeholder="Enter coupon code">
+    <button type="button" id="couponBtn" onclick="applyCoupon()">Apply</button>
+    </div>
+
+    <div id="couponMsg" class="msg-box"></div>
+
+    <div class="coupon-list">
+        <p class="coupon-title">Available Coupons</p>
+        <ul id="couponList"></ul>
+    </div>
+
+</div>
+            <button class="pay-btn" type="submit">Pay Now</button>
         </form>
     </div>
 
-</main>
+<?php } ?>
 
+</main>
 </div>
 
-<script>
-/* Demo JS – later you can replace with AJAX */
-function applyCoupon() {
-    document.getElementById("couponMsg").innerText =
-        "Coupon applied successfully!";
-    document.getElementById("couponMsg").className = "info-text success";
-}
+<?php if ($agreement) { ?>
 
-document.getElementById("paymentForm").addEventListener("submit", function(e) {
+
+<script src="../JS/Ajax.js"></script>
+<script>
+    loadCoupons();
+document.getElementById("paymentForm").addEventListener("submit", function(e){
     e.preventDefault();
-    document.getElementById("paymentMsg").innerText =
-        "Payment successful!";
-    document.getElementById("paymentMsg").className = "info-text success";
-    document.getElementById("payBtn").disabled = true;
+
+    let month = document.getElementById("month").value;
+    let box = document.getElementById("msgBox");
+
+    let x = new XMLHttpRequest();
+    x.onreadystatechange = function(){
+        if (x.readyState === 4 && x.status === 200) {
+
+            let res = x.responseText.trim();
+            box.style.display = "block";
+
+            if (res === "success") {
+                box.innerText = "✅ Payment Successful!";
+                box.className = "msg-box msg-success";
+            } 
+            else if (res.includes("Already paid")) {
+                box.innerText = "⚠️ You have already paid for this month.";
+                box.className = "msg-box msg-error";
+            } 
+            else {
+                box.innerText = "❌ " + res;
+                box.className = "msg-box msg-error";
+            }
+        }
+    };
+
+    x.open("POST", "../Php/make_payment_action.php", true);
+    x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    x.send("month=" + encodeURIComponent(month));
 });
 </script>
+
+
+
+<?php } ?>
 
 </body>
 </html>
