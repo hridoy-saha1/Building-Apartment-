@@ -29,7 +29,7 @@ if (mysqli_num_rows($agr) !== 1) {
 }
 
 $a = mysqli_fetch_assoc($agr);
-$rent = $a['rent'];
+$rent = (int) ($_POST['amount'] ?? $a['rent']);
 
 /* ❌ Prevent duplicate payment */
 $chk = mysqli_query($conn, "
