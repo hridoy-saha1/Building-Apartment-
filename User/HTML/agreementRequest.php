@@ -155,6 +155,6 @@ $result = mysqli_query($conn, $sql);
     </div>
 </div>
 
-<script src="../JS/Ajax"></script>
+<script src="../JS/Ajax.js"></script>
 </body>
 </html>
