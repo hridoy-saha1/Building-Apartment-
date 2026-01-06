@@ -9,12 +9,8 @@ if (!isset($_SESSION['email'])) {
 
 $userEmail = $_SESSION['email'];
 
-// Fetch payment history
-$sql = "SELECT * FROM payments 
-        WHERE user_email='$userEmail' 
-        ORDER BY paid_at DESC";
 
-$result = mysqli_query($conn, $sql);
+$result = getPaymentHistory($conn, $userEmail);
 ?>
 
 <!DOCTYPE html>
