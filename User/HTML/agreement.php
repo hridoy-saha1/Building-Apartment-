@@ -16,7 +16,6 @@ $user_name  = $_SESSION['name'];
 $user_email = $_SESSION['email'];
 $apartment_id = (int) $_POST['apartment_id'];
 
-// 🔍 Get apartment info
 $aptSql = "SELECT * FROM apartments WHERE id = $apartment_id";
 $aptRes = mysqli_query($conn, $aptSql);
 
@@ -51,7 +50,7 @@ VALUES
 )";
 
 if (mysqli_query($conn, $insertSql)) {
-    echo "success";   // 👈 AJAX success signal
+    echo "success";  
 } else {
     echo "Failed";
 }
