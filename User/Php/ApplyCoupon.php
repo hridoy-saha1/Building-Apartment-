@@ -1,19 +1,19 @@
 <?php
 include '../DB/db.php';
-
+ 
 $action = $_REQUEST['action'] ?? '';
-
+ 
 /* =========================
    1️⃣ LOAD COUPON LIST
    ========================= */
 if ($action === 'list') {
-
+ 
     $q = mysqli_query($conn,
-        "SELECT code, discount 
-         FROM coupons 
+        "SELECT code, discount
+         FROM coupons
          WHERE available = 1"
     );
-
+ 
     while ($c = mysqli_fetch_assoc($q)) {
         echo "<li onclick=\"fillCoupon('{$c['code']}')\">
                 <strong>{$c['code']}</strong> — {$c['discount']}% off
@@ -21,14 +21,14 @@ if ($action === 'list') {
     }
     exit();
 }
-
+ 
 /* =========================
    2️⃣ APPLY COUPON
    ========================= */
 if ($action === 'apply') {
-
+ 
     $code = trim($_POST['code'] ?? '');
-
+ 
     if ($code === '') {
         echo json_encode([
             "status" => "error",
@@ -36,13 +36,13 @@ if ($action === 'apply') {
         ]);
         exit();
     }
-
+ 
     $q = mysqli_query($conn,
-        "SELECT discount 
-         FROM coupons 
+        "SELECT discount
+         FROM coupons
          WHERE code='$code' AND available=1"
     );
-
+ 
     if (mysqli_num_rows($q) !== 1) {
         echo json_encode([
             "status" => "error",
@@ -50,17 +50,19 @@ if ($action === 'apply') {
         ]);
         exit();
     }
-
+ 
     $c = mysqli_fetch_assoc($q);
-
+ 
     echo json_encode([
         "status"   => "success",
         "discount" => (int)$c['discount']
     ]);
     exit();
 }
-
+ 
 /* =========================
    INVALID REQUEST
    ========================= */
 echo "Invalid request";
+ 
+ 
