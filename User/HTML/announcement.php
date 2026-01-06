@@ -10,7 +10,7 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
 
 
 
-/* ===== Fetch All Announcements ===== */
+
 $sql = "SELECT * FROM announcements ORDER BY createdAt DESC";
 $result = $conn->query($sql);
 ?>
