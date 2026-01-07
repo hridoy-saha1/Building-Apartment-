@@ -33,7 +33,7 @@ $role = $_SESSION['role'] ?? '';
     <?php endif; ?>
 
     <div class="bottom">
-        <a href="Home.php">⬅ Back to Home</a>
-        <a href="Logout.php" class="logout">Logout</a>
+        <a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/Home.php">⬅ Back to Home</a>
+        <a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/Logout.php" class="logout">Logout</a>
     </div>
 </aside>
