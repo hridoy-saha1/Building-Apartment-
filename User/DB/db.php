@@ -24,9 +24,11 @@ function registerUser($conn, $name, $email, $photo, $password) {
     return mysqli_query($conn, $sql);
 }
 
+function logInUserByEmail($conn, $email) {
 
-
-
+    $sql = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+    return mysqli_query($conn, $sql);
+}
 
 
 

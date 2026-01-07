@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Login</title>
-  <link rel="stylesheet" href="../CSS/login.css">
- 
-</head>
-
 
 <?php 
 session_start();
@@ -15,53 +7,55 @@ if (isset($_SESSION["name"]))
     exit();
 }
  include '../DB/db.php';
-  $error = '';
 
-  
- if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-     $email = $_POST['email'];  
-     $password = $_POST['password'];
-     
-     if (empty($email) || empty($password)){    
-        $error = 'Fill All Filed';
- }
- else{
+    $email    = $_POST['email'];
+    $password = $_POST['password'];
 
-     $sql = "SELECT * FROM users WHERE email='$email'";
-     $result = $conn->query($sql);
-     if($result->num_rows > 0){ 
-        $user = $result->fetch_assoc();
-      if(password_verify($password,$user["password"])){
-                
+    if (empty($email) || empty($password)) {
+        $error = "Fill All Field";
+    } 
+    else {
+
+        $result = logInUserByEmail($conn, $email);
+
+        if (mysqli_num_rows($result) === 1) {
+
+            $user = mysqli_fetch_assoc($result);
+
+            if (password_verify($password, $user['password'])) {
+
                 $_SESSION['name']    = $user['name'];
                 $_SESSION['email']   = $user['email'];
                 $_SESSION['photo']   = $user['photo'];
                 $_SESSION['role']    = $user['role'];
-                $_SESSION['user_id'] = $user['id'];  
-          header("Location: dashboard.php");
-                exit;
-     }
-     else{
-        $error = "Invalid Password";
-     }
+                $_SESSION['user_id'] = $user['id'];
 
-    }
-    else{
-        $error="Invalid Email"; 
-
+                header("Location: dashboard.php");
+                exit();
+            } 
+            else {
+                $error = "Invalid Password";
+            }
+        } 
+        else {
+            $error = "Invalid Email";
+        }
     }
 }
- }
+
 
 
 ?>
 
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="../CSS/login.css">
+ 
+</head>
 
 <body>
 
@@ -97,3 +91,8 @@ if (isset($_SESSION["name"]))
 
 </body>
 </html>
+<?php if (!empty($error)) { ?>
+<script>
+    alert("<?php echo $error; ?>");
+</script>
+<?php } ?>
