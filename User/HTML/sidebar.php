@@ -13,19 +13,21 @@ $role = $_SESSION['role'] ?? '';
         <a href="profile.php">👤 Profile</a>
         <a href="announcement.php">📢 Announcements</a>
         <a href="../../Admin/HTML/agreementRequest.php">📢 Agreement Request</a>
-         <a href="manage-cupon.php">🎟 Manage Coupon</a>
-         <a href="make-announcement.php">📄 Make Announcement</a>
+        <a href="manage-cupon.php">🎟 Manage Coupon</a>
+        <a href="make-announcement.php">📄 Make Announcement</a>
 
     <?php elseif ($role === 'user'): ?>
         
         <a href="profile.php">👤 My Profile</a>
         <a href="make-payment.php">💳 Make Payment</a>
         <a href="payment-history.php">📄 Payment History</a>
+        
 
  <?php elseif ($role === 'member'): ?>
      <a href="profile.php">👤 My Profile</a>
         <a href="make-payment.php">💳 Make Payment</a>
         <a href="payment-history.php">📄 Payment History</a>
+        
 
 
     <?php endif; ?>
