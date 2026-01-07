@@ -20,19 +20,14 @@ if (!in_array($status, ['approved', 'rejected'])) {
     exit;
 }
 
-/* =========================
-   APPROVE AGREEMENT
-   ========================= */
 if ($status === 'approved') {
 
-    // Update agreement status
     $updateAgreement = "UPDATE agreements SET status='approved' WHERE id=$id";
     if (!mysqli_query($conn, $updateAgreement)) {
         echo "Failed";
         exit;
     }
 
-    // Get user + apartment info
     $getInfo = "SELECT user_email, apartment_no 
                 FROM agreements 
                 WHERE id=$id";
@@ -42,14 +37,14 @@ if ($status === 'approved') {
     $userEmail   = $row['user_email'];
     $apartmentNo = $row['apartment_no'];
 
-    // Promote user
+    
     mysqli_query($conn,
         "UPDATE users 
          SET role='member' 
          WHERE email='$userEmail'"
     );
 
-    // Disable apartment
+    
     mysqli_query($conn,
         "UPDATE apartments 
          SET status='unavailable' 

@@ -3,9 +3,7 @@ include '../DB/db.php';
 
 $action = $_REQUEST['action'] ?? '';
 
-/* =========================
-   1️⃣ LOAD COUPON LIST
-   ========================= */
+
 if ($action === 'list') {
 
     $q = mysqli_query($conn,
@@ -22,9 +20,7 @@ if ($action === 'list') {
     exit();
 }
 
-/* =========================
-   2️⃣ APPLY COUPON
-   ========================= */
+
 if ($action === 'apply') {
 
     $code = trim($_POST['code'] ?? '');
@@ -60,7 +56,5 @@ if ($action === 'apply') {
     exit();
 }
 
-/* =========================
-   INVALID REQUEST
-   ========================= */
+
 echo "Invalid request";

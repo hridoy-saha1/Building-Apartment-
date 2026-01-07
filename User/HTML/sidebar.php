@@ -11,21 +11,22 @@ $role = $_SESSION['role'] ?? '';
     <?php if ($role === 'admin'): ?>
         
         <a href="profile.php">👤 Profile</a>
-        <a href="announcement.php">📢 Announcements</a>
         <a href="../../Admin/HTML/agreementRequest.php">📢 Agreement Request</a>
-         <a href="manage-cupon.php">🎟 Manage Coupon</a>
-         <a href="make-announcement.php">📄 Make Announcement</a>
-
+         <a href="/Web%20Tech%20Code/Building-Apartment/Admin/HTML/manage-cupon.php">🎟 Manage Coupon</a>
+         <a href="/Web%20Tech%20Code/Building-Apartment/Admin/HTML/make-announcement.php">📄 Make Announcement</a>
+        
     <?php elseif ($role === 'user'): ?>
         
         <a href="profile.php">👤 My Profile</a>
-        <a href="make-payment.php">💳 Make Payment</a>
-        <a href="payment-history.php">📄 Payment History</a>
+       
 
  <?php elseif ($role === 'member'): ?>
      <a href="profile.php">👤 My Profile</a>
+    <a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/announcement.php">📢 Announcements</a>
+
         <a href="make-payment.php">💳 Make Payment</a>
         <a href="payment-history.php">📄 Payment History</a>
+        <a href="changePassword.php">Change Password</a>
 
 
     <?php endif; ?>

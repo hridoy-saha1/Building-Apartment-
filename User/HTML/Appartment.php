@@ -12,17 +12,8 @@ $userEmail = $_SESSION['email'];
 $min = isset($_GET['min']) && $_GET['min'] !== '' ? (int)$_GET['min'] : null;
 $max = isset($_GET['max']) && $_GET['max'] !== '' ? (int)$_GET['max'] : null;
 
-$sql = "SELECT * FROM apartments WHERE status='available'";
+$result= showApartment($conn, $min , $max );
 
-if ($min !== null) {
-    $sql .= " AND rent >= $min";
-}
-
-if ($max !== null) {
-    $sql .= " AND rent <= $max";
-}
-
-$result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
