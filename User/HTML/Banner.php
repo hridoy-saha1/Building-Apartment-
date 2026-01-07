@@ -10,7 +10,7 @@
 <div class="banner">
     <h2>Welcome to OneBuilding</h2>
     <p>Smart living for a smarter community</p>
-    <a href="apartments.php">
+    <a href="Appartment.php">
         <button>Book Apartment</button>
     </a>
 </div>

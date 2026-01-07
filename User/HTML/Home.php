@@ -1,4 +1,9 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +11,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    <?php   
+    include "Navbar.php";  
+   
+   include "Banner.php";
+   include "feature.php";
+   include "rooms.php";
+   include "nearby.php";
+   include "about.php";
+   include "location.php";
+   include "footer.php";
+  
+    ?>
 </body>
 </html>

@@ -1,0 +1,89 @@
+/* ===== Profile Wrapper ===== */
+.profile-card{
+    max-width:480px;
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px 35px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+    margin-top:40px;
+    position:relative;
+    animation: fadeUp 0.6s ease;
+}
+
+/* Soft animation */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Header */
+.profile-card h2{
+    text-align:center;
+    font-size:24px;
+    color:#1e40af;
+    margin-bottom:30px;
+}
+
+/* ===== Avatar ===== */
+.avatar{
+    width:110px;
+    height:110px;
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+    color:white;
+    font-size:42px;
+    font-weight:bold;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 30px auto;
+    box-shadow:0 10px 20px rgba(37,99,235,0.4);
+}
+
+/* ===== Info rows ===== */
+.profile-card p{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    background:#f8fafc;
+    border-radius:12px;
+    margin-bottom:14px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+/* Hover effect */
+.profile-card p:hover{
+    background:#eef2ff;
+}
+
+/* Label */
+.profile-card p strong{
+    color:#475569;
+    font-weight:600;
+}
+
+/* Value text */
+.profile-card p span{
+    color:#0f172a;
+    font-weight:500;
+}
+
+/* ===== Optional divider ===== */
+.profile-card::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:6px;
+    background:linear-gradient(90deg,#2563eb,#22c55e,#2563eb);
+    border-radius:20px 20px 0 0;
+}
