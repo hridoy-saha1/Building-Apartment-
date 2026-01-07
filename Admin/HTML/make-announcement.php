@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../DB/db.php';
+include '../../User/DB/db.php';
 
 if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
@@ -36,14 +36,14 @@ $result = $conn->query(
     <meta charset="UTF-8">
     <title>Make Announcement</title>
 
-    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../../User/CSS/dashboard.css">
     <link rel="stylesheet" href="../CSS/make-anouncement.css">
-    <link rel="stylesheet" href="../CSS/announcement.css">
+    <link rel="stylesheet" href="../../User/CSS/announcement.css">
 </head>
 <body>
 
 <div class="layout">
-<?php include 'sidebar.php'; ?>
+    <?php include '../../User/HTML/sidebar.php'; ?>
 
 <main class="content">
 
