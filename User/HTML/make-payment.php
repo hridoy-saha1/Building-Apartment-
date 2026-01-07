@@ -124,10 +124,12 @@ if (mysqli_num_rows($res) === 1) {
  
 <script src="../JS/Ajax.js"></script>
 <script>
-    loadCoupons();
+     loadCoupons();
 document.getElementById("paymentForm").addEventListener("submit", function(e){
     e.preventDefault();
  
+    
+
     let month = document.getElementById("month").value;
     let box = document.getElementById("msgBox");
  
