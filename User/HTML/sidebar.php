@@ -6,11 +6,11 @@ $role = $_SESSION['role'] ?? '';
     <div class="logo">🏢 Dashboard</div>
 
     
-    <a href="dashboard.php">🏠 Dashboard</a>
+    <a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/dashboard.php">🏠 Dashboard</a>
 
     <?php if ($role === 'admin'): ?>
         
-        <a href="profile.php">👤 Profile</a>
+        <a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/profile.php">👤 Profile</a>
         <a href="../../Admin/HTML/agreementRequest.php">📢 Agreement Request</a>
          <a href="/Web%20Tech%20Code/Building-Apartment/Admin/HTML/manage-cupon.php">🎟 Manage Coupon</a>
          <a href="/Web%20Tech%20Code/Building-Apartment/Admin/HTML/make-announcement.php">📄 Make Announcement</a>
@@ -22,8 +22,9 @@ $role = $_SESSION['role'] ?? '';
 
  <?php elseif ($role === 'member'): ?>
      <a href="profile.php">👤 My Profile</a>
-    <a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/announcement.php">📢 Announcements</a>
-
+<a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/announcement.php">
+    📢 Announcements
+</a>
         <a href="make-payment.php">💳 Make Payment</a>
         <a href="payment-history.php">📄 Payment History</a>
         <a href="changePassword.php">Change Password</a>

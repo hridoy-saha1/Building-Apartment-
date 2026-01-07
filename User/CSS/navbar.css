@@ -7,11 +7,10 @@
 
 .navbar {
     background: #043461dc;
-    border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
     z-index: 1000;
-} 
+}
 
 .nav-container {
     max-width: 1200px;
@@ -52,6 +51,7 @@
     color: #f59e0b;
 }
 
+/* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -98,41 +98,4 @@
 
 .logout {
     color: red;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-}
-
-.mobile-menu a {
-    padding: 10px 0;
-    text-decoration: none;
-    color: #000;
-}
-
-.mobile-menu a:hover {
-    color: #f59e0b;
-}
-
-.mobile-menu.show {
-    display: flex;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .menu-toggle {
-        display: block;
-    }
 }
