@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../DB/db.php';
+include '../../User/DB/db.php';
 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     echo "<h2>Access Denied</h2>";
@@ -16,7 +16,7 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <title>Agreement Requests</title>
-    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../../User/CSS/dashboard.css">
 
     <style>
         body {
@@ -106,7 +106,7 @@ $result = mysqli_query($conn, $sql);
 <body>
 
 <div class="layout">
-    <?php include 'sidebar.php'; ?>
+    <?php include '../../User/HTML/sidebar.php'; ?>
 
     <div class="content">
         <h2>🏠 Agreement Requests</h2>

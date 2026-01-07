@@ -12,7 +12,7 @@ $role = $_SESSION['role'] ?? '';
         
         <a href="profile.php">👤 Profile</a>
         <a href="announcement.php">📢 Announcements</a>
-        <a href="agreementRequest.php">📢 Agreement Request</a>
+        <a href="../../Admin/HTML/agreementRequest.php">📢 Agreement Request</a>
          <a href="manage-cupon.php">🎟 Manage Coupon</a>
          <a href="make-announcement.php">📄 Make Announcement</a>
 

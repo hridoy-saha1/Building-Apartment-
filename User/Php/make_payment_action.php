@@ -29,8 +29,13 @@ if (mysqli_num_rows($agr) !== 1) {
 }
  
 $a = mysqli_fetch_assoc($agr);
+<<<<<<< HEAD
 $rent = $a['rent'];
  
+=======
+$rent = (int) ($_POST['amount'] ?? $a['rent']);
+
+>>>>>>> 8d8ca4d63f8d65fd25ef7e951fdba48766ba365d
 /* ❌ Prevent duplicate payment */
 $chk = mysqli_query($conn, "
     SELECT id FROM payments

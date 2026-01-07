@@ -124,8 +124,13 @@ if (mysqli_num_rows($res) === 1) {
  
 <script src="../JS/Ajax.js"></script>
 <script>
+<<<<<<< HEAD
      loadCoupons();
 document.getElementById("paymentForm").addEventListener("submit", function(e){
+=======
+    loadCoupons();
+ document.getElementById("paymentForm").addEventListener("submit", function(e){
+>>>>>>> 8d8ca4d63f8d65fd25ef7e951fdba48766ba365d
     e.preventDefault();
  
     
@@ -157,7 +162,13 @@ document.getElementById("paymentForm").addEventListener("submit", function(e){
  
     x.open("POST", "../Php/make_payment_action.php", true);
     x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    x.send("month=" + encodeURIComponent(month));
+   let rent = document.getElementById("rent").value;
+
+     x.send(
+    "month=" + encodeURIComponent(month) +
+    "&amount=" + encodeURIComponent(rent)
+);
+
 });
 </script>
  
