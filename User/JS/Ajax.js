@@ -41,6 +41,7 @@ function updateStatus(id, status) {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("id=" + id + "&status=" + status);
 }
+<<<<<<< HEAD
  
 /* ===============================
    GLOBAL VARIABLES
@@ -51,6 +52,13 @@ let couponApplied = false;
 /* ===============================
    LOAD COUPON LIST (ON PAGE LOAD)
    =============================== */
+=======
+
+let originalRent = null;
+let couponApplied = false;
+
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 function loadCoupons() {
  
     var xhttp = new XMLHttpRequest();
@@ -68,10 +76,15 @@ function loadCoupons() {
     );
     xhttp.send();
 }
+<<<<<<< HEAD
  
 /* ===============================
    APPLY COUPON
    =============================== */
+=======
+
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 function applyCoupon() {
  
     var code = document.getElementById("couponCode").value.trim();
@@ -90,8 +103,12 @@ function applyCoupon() {
         msg.style.display = "block";
         return;
     }
+<<<<<<< HEAD
  
     // Save original rent only once
+=======
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
     if (originalRent === null) {
         originalRent = parseInt(rentInput.value);
     }
@@ -123,8 +140,12 @@ function applyCoupon() {
                 msg.innerText =
                     "✅ Coupon applied! " + res.discount + "% off";
                 msg.className = "msg-box msg-success";
+<<<<<<< HEAD
  
                 // Switch button to Remove
+=======
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
                 btn.innerText = "Remove";
                 btn.onclick = removeCoupon;
  
@@ -151,10 +172,15 @@ function applyCoupon() {
         "action=apply&code=" + encodeURIComponent(code)
     );
 }
+<<<<<<< HEAD
  
 /* ===============================
    REMOVE COUPON
    =============================== */
+=======
+
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 function removeCoupon() {
  
     var rentInput = document.getElementById("rent");
@@ -176,10 +202,15 @@ function removeCoupon() {
  
     couponApplied = false;
 }
+<<<<<<< HEAD
  
 /* ===============================
    OPTIONAL: CLICK COUPON TO FILL
    =============================== */
+=======
+
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 function fillCoupon(code) {
     document.getElementById("couponCode").value = code;
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../DB/db.php';
+include '../../User/DB/db.php';
 
 if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
@@ -30,14 +30,14 @@ $result = $conn->query("SELECT * FROM coupons ORDER BY id DESC");
     <meta charset="UTF-8">
     <title>Manage Coupons</title>
 
-    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../../User/CSS/dashboard.css">
     <link rel="stylesheet" href="../CSS/manage-cupon.css">
 </head>
 <body>
 
 <div class="layout">
 
-    <?php include 'sidebar.php'; ?>
+    <?php include '../../User/HTML/sidebar.php'; ?>
 
     <main class="content">
 

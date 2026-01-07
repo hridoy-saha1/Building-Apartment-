@@ -1,70 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
- include '../DB/db.php';
-  $success=$error =$nameerror=$errorPass=$emailerror= '';
+<?php
+include '../DB/db.php';
 
-  
- if($_SERVER['REQUEST_METHOD'] == 'POST'){
+$error = $nameerror = $emailerror = $errorPass = "";
 
-     $name = $_POST['name'];    
-     $email = $_POST['email'];  
-     $photo = $_POST['photo'];
-     $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-     if(empty($name) || empty($email) || empty($photo) || empty($password)){
-        $error = 'Please Fill All Field';
-     }
+    $name     = $_POST['name'];
+    $email    = $_POST['email'];
+    $photo    = $_POST['photo'];
+    $password = $_POST['password'];
 
-     else{
-        if(!preg_match("/^[a-zA-Z ]*$/",$name)){
-            $nameerror = "Only Letter And White space Allowed";
-        }
-        else if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/', $password)) {
-       $errorPass="Password must contain uppercase, lowercase and be at least 6 characters";
+    if (empty($name) || empty($email) || empty($photo) || empty($password)) {
+        $error = "Please Fill All Field";
     }
-
-    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){   
+    elseif (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+        $nameerror = "Only Letter And White space Allowed";
+    }
+    elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/', $password)) {
+        $errorPass = "Password must contain uppercase, lowercase and be at least 6 characters";
+    }
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailerror = "Enter Valid Email";
-     }
-
-    else{
-           
-
-         $checkEmail = "SELECT id FROM users WHERE email = '$email'";
-        $result = $conn->query($checkEmail);
-
-        if ($result && $result->num_rows > 0) {
-            $emailerror = "This email is already registered";
-        }
-
-     
-        else {
-
-
-        $hashPassword = password_hash($password, PASSWORD_DEFAULT); 
-        $sql="INSERT INTO users(name,email,photo,password) values('$name','$email','$photo','$hashPassword')";
-    
-      if($conn->query($sql))
-        {
+    }
+    elseif (emailExists($conn, $email)) {
+        $emailerror = "This email is already registered";
+    }
+    else {
+        if (registerUser($conn, $name, $email, $photo, $password)) {
             header("Location: Login.php");
-        }
- 
-        else{
- 
-            $error="ERROR ". $conn->error;
- 
-        }
+            exit();
+        } else {
+            $error = "Registration failed";
         }
     }
-
-
- }
-
- }
-
+}
 ?>
+
 
 
 

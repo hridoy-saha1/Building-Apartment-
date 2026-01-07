@@ -2,10 +2,15 @@
 include '../DB/db.php';
  
 $action = $_REQUEST['action'] ?? '';
+<<<<<<< HEAD
  
 /* =========================
    1️⃣ LOAD COUPON LIST
    ========================= */
+=======
+
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 if ($action === 'list') {
  
     $q = mysqli_query($conn,
@@ -21,10 +26,15 @@ if ($action === 'list') {
     }
     exit();
 }
+<<<<<<< HEAD
  
 /* =========================
    2️⃣ APPLY COUPON
    ========================= */
+=======
+
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 if ($action === 'apply') {
  
     $code = trim($_POST['code'] ?? '');
@@ -59,10 +69,15 @@ if ($action === 'apply') {
     ]);
     exit();
 }
+<<<<<<< HEAD
  
 /* =========================
    INVALID REQUEST
    ========================= */
+=======
+
+
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 echo "Invalid request";
  
  

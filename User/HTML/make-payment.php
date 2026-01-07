@@ -8,6 +8,7 @@ if (!isset($_SESSION['email'])) {
 }
  
 $userEmail = $_SESSION['email'];
+<<<<<<< HEAD
  
 /* 🔍 Get approved agreement */
 $sql = "SELECT * FROM agreements
@@ -17,6 +18,10 @@ $sql = "SELECT * FROM agreements
  
 $res = mysqli_query($conn, $sql);
  
+=======
+
+$res=paymentFilled($conn, $userEmail);
+>>>>>>> 8fe480005f28ccfd07fb76b266a1c7184cc5e25e
 $agreement = null;
 if (mysqli_num_rows($res) === 1) {
     $agreement = mysqli_fetch_assoc($res);
