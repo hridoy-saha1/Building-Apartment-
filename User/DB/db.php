@@ -17,3 +17,18 @@ function getPaymentHistory($conn, $userEmail) {
 
     return mysqli_query($conn, $sql);
 }
+
+
+function showApartment($conn, $min = null, $max = null){
+    $sql = "SELECT * FROM apartments WHERE status='available'";
+
+if ($min !== null) {
+    $sql .= " AND rent >= $min";
+}
+
+if ($max !== null) {
+    $sql .= " AND rent <= $max";
+}
+
+return mysqli_query($conn, $sql);
+}
