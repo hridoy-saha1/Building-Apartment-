@@ -2,7 +2,7 @@
 session_start();
 include '../DB/db.php';
 
-if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['email']) || !in_array($_SESSION['role'], ['admin', 'member'])) {
     header("Location: login.php");
     exit();
 }
