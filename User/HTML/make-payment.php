@@ -9,13 +9,7 @@ if (!isset($_SESSION['email'])) {
 
 $userEmail = $_SESSION['email'];
 
-$sql = "SELECT * FROM agreements 
-        WHERE user_email='$userEmail' 
-        AND status='approved' 
-        LIMIT 1";
-
-$res = mysqli_query($conn, $sql);
-
+$res=paymentFilled($conn, $userEmail);
 $agreement = null;
 if (mysqli_num_rows($res) === 1) {
     $agreement = mysqli_fetch_assoc($res);
