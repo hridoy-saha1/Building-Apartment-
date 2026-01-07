@@ -12,7 +12,7 @@ $role = $_SESSION['role'] ?? '';
         
         <a href="profile.php">👤 Profile</a>
         <a href="../../Admin/HTML/agreementRequest.php">📢 Agreement Request</a>
-         <a href="/Web%20Tech%20Code/Building-Apartment/User/HTML/manage-cupon.php">🎟 Manage Coupon</a>
+         <a href="/Web%20Tech%20Code/Building-Apartment/Admin/HTML/manage-cupon.php">🎟 Manage Coupon</a>
          <a href="/Web%20Tech%20Code/Building-Apartment/Admin/HTML/make-announcement.php">📄 Make Announcement</a>
 
     <?php elseif ($role === 'user'): ?>
