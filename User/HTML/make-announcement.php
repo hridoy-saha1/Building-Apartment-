@@ -9,7 +9,6 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
 
 $success = "";
 
-/* ===== Add Announcement ===== */
 if (isset($_POST['publish'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -22,13 +21,11 @@ if (isset($_POST['publish'])) {
     }
 }
 
-/* ===== Delete Announcement ===== */
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $conn->query("DELETE FROM announcements WHERE id = $id");
 }
 
-/* ===== Fetch Announcements ===== */
 $result = $conn->query(
     "SELECT * FROM announcements ORDER BY createdAt DESC"
 );
@@ -55,7 +52,6 @@ $result = $conn->query(
         <p>Notify residents with important updates</p>
     </div>
 
-    <!-- Create Announcement -->
     <div class="card">
         <h3>Create New Announcement</h3>
 
@@ -87,7 +83,6 @@ $result = $conn->query(
         </form>
     </div>
 
-    <!-- Show Announcements -->
     <h2 style="margin-top:40px;">📋 Previous Announcements</h2>
 
     <?php

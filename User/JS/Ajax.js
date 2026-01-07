@@ -42,15 +42,10 @@ function updateStatus(id, status) {
     xhttp.send("id=" + id + "&status=" + status);
 }
 
-/* ===============================
-   GLOBAL VARIABLES
-   =============================== */
 let originalRent = null;
 let couponApplied = false;
 
-/* ===============================
-   LOAD COUPON LIST (ON PAGE LOAD)
-   =============================== */
+
 function loadCoupons() {
 
     var xhttp = new XMLHttpRequest();
@@ -69,9 +64,7 @@ function loadCoupons() {
     xhttp.send();
 }
 
-/* ===============================
-   APPLY COUPON
-   =============================== */
+
 function applyCoupon() {
 
     var code = document.getElementById("couponCode").value.trim();
@@ -91,7 +84,6 @@ function applyCoupon() {
         return;
     }
 
-    // Save original rent only once
     if (originalRent === null) {
         originalRent = parseInt(rentInput.value);
     }
@@ -124,7 +116,6 @@ function applyCoupon() {
                     "✅ Coupon applied! " + res.discount + "% off";
                 msg.className = "msg-box msg-success";
 
-                // Switch button to Remove
                 btn.innerText = "Remove";
                 btn.onclick = removeCoupon;
 
@@ -152,9 +143,7 @@ function applyCoupon() {
     );
 }
 
-/* ===============================
-   REMOVE COUPON
-   =============================== */
+
 function removeCoupon() {
 
     var rentInput = document.getElementById("rent");
@@ -177,9 +166,7 @@ function removeCoupon() {
     couponApplied = false;
 }
 
-/* ===============================
-   OPTIONAL: CLICK COUPON TO FILL
-   =============================== */
+
 function fillCoupon(code) {
     document.getElementById("couponCode").value = code;
 }

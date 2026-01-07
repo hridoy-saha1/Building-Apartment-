@@ -9,7 +9,6 @@ if (!isset($_SESSION['email'])) {
 
 $userEmail = $_SESSION['email'];
 
-/* 🔍 Get approved agreement */
 $sql = "SELECT * FROM agreements 
         WHERE user_email='$userEmail' 
         AND status='approved' 
