@@ -115,11 +115,6 @@ body {
 }
 
 
-@media (min-width: 768px) {
-  .content {
-    flex-direction: row;
-    align-items: stretch;
-  }
-}
+
 
 

@@ -71,16 +71,3 @@ body {
     background-color: #eab308;
 }
 
-/* Responsive Heights */
-@media (min-width: 640px) {
-    .banner { height: 350px; }
-}
-@media (min-width: 768px) {
-    .banner { height: 450px; }
-}
-@media (min-width: 1024px) {
-    .banner { height: 500px; }
-}
-@media (min-width: 1280px) {
-    .banner { height: 550px; }
-}

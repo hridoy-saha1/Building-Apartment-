@@ -1,4 +1,4 @@
-/* ===== Profile Wrapper ===== */
+
 .profile-card{
     max-width:480px;
     background:#ffffff;
@@ -10,7 +10,7 @@
     animation: fadeUp 0.6s ease;
 }
 
-/* Soft animation */
+
 @keyframes fadeUp{
     from{
         opacity:0;
@@ -22,7 +22,7 @@
     }
 }
 
-/* Header */
+
 .profile-card h2{
     text-align:center;
     font-size:24px;
@@ -30,7 +30,7 @@
     margin-bottom:30px;
 }
 
-/* ===== Avatar ===== */
+
 .avatar{
     width:110px;
     height:110px;
@@ -46,7 +46,7 @@
     box-shadow:0 10px 20px rgba(37,99,235,0.4);
 }
 
-/* ===== Info rows ===== */
+
 .profile-card p{
     display:flex;
     justify-content:space-between;
@@ -59,24 +59,24 @@
     transition:0.3s;
 }
 
-/* Hover effect */
+
 .profile-card p:hover{
     background:#eef2ff;
 }
 
-/* Label */
+
 .profile-card p strong{
     color:#475569;
     font-weight:600;
 }
 
-/* Value text */
+
 .profile-card p span{
     color:#0f172a;
     font-weight:500;
 }
 
-/* ===== Optional divider ===== */
+
 .profile-card::after{
     content:"";
     position:absolute;
