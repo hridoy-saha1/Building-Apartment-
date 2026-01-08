@@ -15,7 +15,6 @@ if ($month === '') {
     exit();
 }
 
-/* 🔍 Get approved agreement */
 $agr = mysqli_query($conn, "
     SELECT rent 
     FROM agreements 
@@ -31,7 +30,6 @@ if (mysqli_num_rows($agr) !== 1) {
 $a = mysqli_fetch_assoc($agr);
 $rent = (int) ($_POST['amount'] ?? $a['rent']);
 
-/* ❌ Prevent duplicate payment */
 $chk = mysqli_query($conn, "
     SELECT id FROM payments 
     WHERE user_email='$userEmail' 
@@ -43,7 +41,6 @@ if (mysqli_num_rows($chk) > 0) {
     exit();
 }
 
-/* 💾 Insert payment (MATCHES TABLE) */
 $sql = "INSERT INTO payments
 (user_email, amount, month, method)
 VALUES
